@@ -8,7 +8,7 @@ secret_key = "rIWLg1+Ejh1IWUFw6zF8uS6eglPkYqQqk/fDG7sr"
 resource "aws_instance" "one" {
   ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
-  key_name        = "kanhu"
+  key_name        = "jenkins"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
@@ -17,7 +17,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
+echo "hai all this is my app created by terraform infrastructurte by kanhu server-1" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-serverr-1"
@@ -27,7 +27,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
-  key_name        = "kanhu"
+  key_name        = "jenkins"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   user_data       = <<EOF
@@ -36,7 +36,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
+echo "hai all this is my website created by terraform infrastructurte by kanhu server-2" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-2"
@@ -46,7 +46,7 @@ EOF
 resource "aws_instance" "three" {
   ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
-  key_name        = "kanhu"
+  key_name        = "jenkins"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
   tags = {
@@ -57,7 +57,7 @@ resource "aws_instance" "three" {
 resource "aws_instance" "four" {
   ami             = "ami-006935d9a6773e4ec"
   instance_type   = "t2.micro"
-  key_name        = "kanhu"
+  key_name        = "jenkins"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   tags = {
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra77889900prodenvgshj"
+  bucket = "kanhu77889900prodenvgshj"
 }
 
 resource "aws_iam_user" "seven" {
